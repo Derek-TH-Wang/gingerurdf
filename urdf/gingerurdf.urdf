@@ -3,6 +3,20 @@
 
   <link
     name="base_link">
+    <inertial>
+      <origin
+        xyz="2.61752017675272E-06 -0.165725126916168 0.176971895173863"
+        rpy="0 0 0" />
+      <mass
+        value="36.8100641165154" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
     <visual>
       <origin
         xyz="0 0 0"
@@ -46,15 +60,9 @@
         izz="0.211201747394794" />
     </inertial>
     <visual>
-
       <origin
         xyz="0 0 0"
         rpy="0 2.428103804 0" />
-
-      <!--<origin
-        xyz="0 0 0"
-        rpy="0 0 0" />-->
-
       <geometry>
         <mesh
           filename="package://gingerurdf/meshes/Knee_Link.STL" />
@@ -80,15 +88,9 @@
   <joint
     name="Knee"
     type="revolute">
-
-    <!--<origin
-      xyz="0 -0.163753578960292 0.422732937784996"
-      rpy="1.5707963267949 0.0562043157596906 -2.28428512229131" />-->
-
     <origin
       xyz="0 -0.163753578960292 0.422732937784996"
       rpy="1.5707963267949 0 1.5707963267949" />
-
     <parent
       link="base_link" />
     <child
@@ -119,14 +121,9 @@
         izz="0.00155644818843089" />
     </inertial>
     <visual>
-      <!--<origin
-        xyz="0 0 0"
-        rpy="0 0 0" />-->
-
       <origin
         xyz="0 0 0"
         rpy="1.5707963267949 0 -1.5707963267949" />
-
       <geometry>
         <mesh
           filename="package://gingerurdf/meshes/Back_Z_Link.STL" />
@@ -151,17 +148,11 @@
   <joint
     name="Back_Z"
     type="revolute">
-    <!--<origin
-      xyz="-0.0258402466955493 0.459273873742399 0"
-      rpy="3.14159265358979 0.857307531298485 -3.0853883378301" />-->
-
-    <!--<origin
-      xyz="-0.0258402466955493 0.459273873742399 0"
-      rpy="0 -1.5707963267949 0" />-->
-
     <origin
       xyz="0.0258402466955493 0.459273873742399 0.015"
       rpy="-1.5707963267949 0 0" />
+
+    <!-- why add 0.15 to z , z=0 before-->
 
     <parent
       link="Knee_Link" />
@@ -192,14 +183,9 @@
         izz="1.14228478989141E-07" />
     </inertial>
     <visual>
-      <!--<origin
-        xyz="0 0 0"
-        rpy="0 0 0" />-->
-
       <origin
         xyz="0 0 0"
         rpy="0 -1.5707963267949 -1.5707963267949" />
-
       <geometry>
         <mesh
           filename="package://gingerurdf/meshes/Back_X_Link.STL" />
@@ -223,20 +209,10 @@
 
   <joint
     name="Back_X"
-    type="revolute">
-
-    <!--<origin
-      xyz="0 0 0"
-      rpy="0 0 0" />-->
-
-    <!--<origin
-      xyz="0 0 0"
-      rpy="1.5707963267949 0 -1.5707963267949" />--> 
-
+    type="revolute"> 
      <origin
       xyz="0 0 0"
       rpy="0 -1.5707963267949 1.5707963267949" />
-
     <parent
       link="Back_Z_Link" />
     <child
@@ -266,14 +242,9 @@
         izz="0" />
     </inertial>
     <visual>
-      <!--<origin
-        xyz="0 0 0"
-        rpy="0 0 0" />-->
-
       <origin
         xyz="0 0 0"
         rpy="3.141592654 0 0" />
-
       <geometry>
         <mesh
           filename="package://gingerurdf/meshes/Back_Y_Link.STL" />
@@ -298,18 +269,9 @@
   <joint
     name="Back_Y"
     type="revolute">
-    <!--<origin
-      xyz="0 0.104999999999997 0"
-      rpy="0 0 0" />-->
-
-    <!--<origin
-      xyz="0.104999999999997 0 0"
-      rpy="0 -1.5707963267949 -1.5707963267949" />-->
-
     <origin
       xyz="0.104999999999997 0 0"
       rpy="0 -1.5707963267949 1.5707963267949" />
-
     <parent
       link="Back_X_Link" />
     <child
@@ -339,14 +301,9 @@
         izz="1.04884810136062E-05" />
     </inertial>
     <visual>
-      <!--<origin
-        xyz="0 0 0"
-        rpy="0 0 0" />-->
-
         <origin
         xyz="0 0 0"
         rpy="1.5707963267949 0 1.5707963267949" />
-
       <geometry>
         <mesh
           filename="package://gingerurdf/meshes/Neck_Z_Link.STL" />
@@ -371,19 +328,9 @@
   <joint
     name="Neck_Z"
     type="revolute">
-    <!--<origin
-      xyz="0 0.37820748993899 0.00368296133076892"
-      rpy="0 0 0" />-->
-
-    <!--<origin
-      xyz="0 -0.37820748993899 0"
-      rpy="3.141592654 0 0" />-->
-    
-    <origin
+     <origin
       xyz="0 -0.37820748993899 0"
       rpy="0 1.5707963267949 -1.5707963267949" />
-
-
     <parent
       link="Back_Y_Link" />
     <child
@@ -413,14 +360,9 @@
         izz="1.47003960675818E-05" />
     </inertial>
     <visual>
-      <!--<origin
-        xyz="0 0 0"
-        rpy="0 0 0" />-->
-
       <origin
         xyz="0 0 0"
         rpy="0 -1.5707963267949 -1.5707963267949" />
-
       <geometry>
         <mesh
           filename="package://gingerurdf/meshes/Neck_X_Link.STL" />
@@ -445,18 +387,9 @@
   <joint
     name="Neck_X"
     type="revolute">
-    <!--<origin
-      xyz="0 0 0"
-      rpy="0 0 0" />-->
-
-    <!--<origin
-      xyz="0 0 0"
-      rpy="1.5707963267949 0 1.5707963267949" />-->
-
     <origin
       xyz="0 0 0"
       rpy="0 -1.5707963267949 -1.5707963267949" />
-
     <parent
       link="Neck_Z_Link" />
     <child
@@ -486,14 +419,9 @@
         izz="0.000221694213130154" />
     </inertial>
     <visual>
-      <!--<origin
-        xyz="0 0 0"
-        rpy="0 0 0" />-->
-
       <origin
         xyz="0 0 0"
         rpy="0 3.141592654 0" />
-
       <geometry>
         <mesh
           filename="package://gingerurdf/meshes/Head_Y_Link.STL" />
@@ -518,18 +446,9 @@
   <joint
     name="Head_Y"
     type="revolute">
-    <!--<origin
-      xyz="0 0.0609748006263349 0.000155084351385615"
-      rpy="0 0 0" />-->
-
-    <!--<origin
-      xyz="0.0609748006263349 0 0"
-      rpy="0 -1.5707963267949 -1.5707963267949" />-->
-
     <origin
       xyz="0.0609748006263349 0 0"
       rpy="0 1.5707963267949 -1.5707963267949" />
-
     <parent
       link="Neck_X_Link" />
     <child
