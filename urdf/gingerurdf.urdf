@@ -3,20 +3,6 @@
 
   <link
     name="base_link">
-    <inertial>
-      <origin
-        xyz="2.61752017675272E-06 -0.165725126916168 0.176971895173863"
-        rpy="0 0 0" />
-      <mass
-        value="36.8100641165154" />
-      <inertia
-        ixx="0"
-        ixy="0"
-        ixz="0"
-        iyy="0"
-        iyz="0"
-        izz="0" />
-    </inertial>
     <visual>
       <origin
         xyz="0 0 0"
