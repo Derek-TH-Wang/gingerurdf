@@ -72,7 +72,7 @@
 
 
   <joint
-    name="Knee"
+    name="Knee_X"
     type="revolute">
     <origin
       xyz="0 -0.163753578960292 0.422732937784996"
@@ -208,7 +208,7 @@
     <limit
       effort="30" velocity="1.0" lower="-0.78190750489346" upper="0.991347015132779" />
     <safety_controller
-      soft_lower_limit="-0.781907" soft_upper_limit="0.991347" k_position="0" k_velocity="0" />
+      soft_lower_limit="-0.261799" soft_upper_limit="0.261799" k_position="0" k_velocity="0" />
   </joint>
 
   <link
@@ -267,7 +267,7 @@
     <limit
       effort="30" velocity="1.0" lower="-0.720820981073658" upper="0.720820981073658" />
     <safety_controller
-      soft_lower_limit="-0.720820" soft_upper_limit="0.720820" k_position="0" k_velocity="0" />
+      soft_lower_limit="-0.261799" soft_upper_limit="0.261799" k_position="0" k_velocity="0" />
   </joint>
 
   <link
@@ -731,9 +731,9 @@
     <axis
       xyz="0 0 1" />
     <limit
-      effort="30" velocity="1.0" lower="-1.61512768979555" upper="0.6770132168486" />
+      effort="30" velocity="1.0" lower="-2.100000" upper="0.6770132168486" />
     <safety_controller
-      soft_lower_limit="-1.570796" soft_upper_limit="0.017500" k_position="0" k_velocity="0" />
+      soft_lower_limit="-2.100000" soft_upper_limit="0.017500" k_position="0" k_velocity="0" />
   </joint>
 
   <link
@@ -2051,9 +2051,9 @@
     <axis
       xyz="0 0 1" />
     <limit
-      effort="30" velocity="1.0" lower="-1.61512768979555" upper="0.6770132168486" />
+      effort="30" velocity="1.0" lower="-2.100000" upper="0.6770132168486" />
     <safety_controller
-      soft_lower_limit="-1.570796" soft_upper_limit="0.017500" k_position="0" k_velocity="0" />
+      soft_lower_limit="-2.100000" soft_upper_limit="0.017500" k_position="0" k_velocity="0" />
   </joint>
 
 
