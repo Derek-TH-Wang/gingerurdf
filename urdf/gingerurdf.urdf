@@ -12,7 +12,7 @@
           filename="package://gingerurdf/meshes/base_link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.964705882352941 0.964705882352941 0.952941176470588 1" />
       </material>
@@ -33,7 +33,7 @@
     name="Knee_Link">
     <inertial>
       <origin
-        xyz="-0.1782 -0.2128 -0.0253"
+        xyz="-0.0147 0.2783 0.015"
         rpy="0 0 0" />
       <mass
         value="37.4804521490049" />
@@ -54,7 +54,7 @@
           filename="package://gingerurdf/meshes/Knee_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.0980392156862745 0.0980392156862745 0.0980392156862745 1" />
       </material>
@@ -94,7 +94,7 @@
     name="Back_Z_Link">
     <inertial>
       <origin
-        xyz="-0.0178 -0.0010 0.0153"
+        xyz="-1.29671680690613E-05 -9.96483011486414E-05 -0.0235253287405914"
         rpy="0 0 0" />
       <mass
         value="0.362897306288371" />
@@ -115,7 +115,7 @@
           filename="package://gingerurdf/meshes/Back_Z_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -156,7 +156,7 @@
     name="Back_X_Link">
     <inertial>
       <origin
-        xyz="-0.000567922552589972 -7.25800221334472E-07 -0.00710646362323375"
+        xyz="0.00710646362323375 -0.000567922552589972 7.25800221334472E-07"
         rpy="0 0 0" />
       <mass
         value="0.160555101690642" />
@@ -177,7 +177,7 @@
           filename="package://gingerurdf/meshes/Back_X_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -215,7 +215,7 @@
     name="Back_Y_Link">
     <inertial>
       <origin
-        xyz="0.00594321909271028 2.43364144072691E-06 -0.188450472690914"
+        xyz="-2.43364144072691E-06 -0.188450472690914 -0.00594321909271028"
         rpy="0 0 0" />
       <mass
         value="14.5524894817025" />
@@ -236,7 +236,7 @@
           filename="package://gingerurdf/meshes/Back_Y_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.964705882352941 0.964705882352941 0.952941176470588 1" />
       </material>
@@ -274,7 +274,7 @@
     name="Neck_Z_Link">
     <inertial>
       <origin
-        xyz="1.99027937078933E-05 -0.000900405889931662 0.0282382085153039"
+        xyz="-1.99027937078933E-05 -0.000900405889931662 -0.0282382085153039"
         rpy="0 0 0" />
       <mass
         value="0.0319419542205201" />
@@ -295,7 +295,7 @@
           filename="package://gingerurdf/meshes/Neck_Z_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -333,7 +333,7 @@
     name="Neck_X_Link">
     <inertial>
       <origin
-        xyz="-0.00163331965794419 -1.09500071057212E-07 0.049706089298506"
+        xyz="0.049706089298506 -0.00163331965794419 -1.09500071057212E-07"
         rpy="0 0 0" />
       <mass
         value="0.0234939114340347" />
@@ -354,7 +354,7 @@
           filename="package://gingerurdf/meshes/Neck_X_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -392,7 +392,7 @@
     name="Head_Y_Link">
     <inertial>
       <origin
-        xyz="-0.0128898228914063 1.25749828895916E-06 -0.0690353219440325"
+        xyz="-1.25749828895916E-06 0.0690353219440325 -0.0128898228914063"
         rpy="0 0 0" />
       <mass
         value="0.476573842563304" />
@@ -413,7 +413,7 @@
           filename="package://gingerurdf/meshes/Head_Y_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
       </material>
@@ -473,7 +473,7 @@
           filename="package://gingerurdf/meshes/Left_Shoulder_X_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
@@ -520,7 +520,7 @@
     name="Left_Shoulder_Y_Link">
     <inertial>
       <origin
-        xyz="0.0005 0.00247755523732418 -0.084565040288068"
+        xyz="0.0289229334 0.07946510647 0.000409656965695976"
         rpy="0 0 0" />
       <mass
         value="1.54721294678954" />
@@ -546,7 +546,7 @@
           filename="package://gingerurdf/meshes/Left_Shoulder_Y_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.964705882352941 0.964705882352941 0.952941176470588 1" />
       </material>
@@ -594,7 +594,7 @@
     name="Left_Elbow_Z_Link">
     <inertial>
       <origin
-        xyz="2.30396076300599E-07 3.30433090420801E-05 8.57515306709744E-06"
+        xyz="8.57515306709744E-06 -2.30396076300599E-07 -3.30433090420801E-05"
         rpy="0 0 0" />
       <mass
         value="0.179037804578459" />
@@ -620,7 +620,7 @@
           filename="package://gingerurdf/meshes/Left_Elbow_Z_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.0980392156862745 0.0980392156862745 0.0980392156862745 1" />
       </material>
@@ -667,7 +667,7 @@
     name="Left_Elbow_X_Link">
     <inertial>
       <origin
-        xyz="-0.000155369147744361 -0.00473625441145745 0.10692667744856"
+        xyz="-0.00473625441145745 0.10692667744856 -0.000155369147744361"
         rpy="0 0 0" />
       <mass
         value="0.829602913902082" />
@@ -693,7 +693,7 @@
           filename="package://gingerurdf/meshes/Left_Elbow_X_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.0980392156862745 0.0980392156862745 0.0980392156862745 1" />
       </material>
@@ -766,7 +766,7 @@
           filename="package://gingerurdf/meshes/Left_Wrist_Z_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
@@ -813,7 +813,7 @@
     name="Left_Wrist_X_Link">
     <inertial>
       <origin
-        xyz="-4.03806102999837E-08 5.12349098885645E-06 -0.00954726828433861"
+        xyz="-0.00954726828433861 5.12349098885645E-06 -4.03806102999837E-08"
         rpy="0 0 0" />
       <mass
         value="0.00848129231803547" />
@@ -839,7 +839,7 @@
           filename="package://gingerurdf/meshes/Left_Wrist_X_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.964705882352941 0.964705882352941 0.952941176470588 1" />
       </material>
@@ -882,7 +882,7 @@
     name="Left_Wrist_Y_Link">
     <inertial>
       <origin
-        xyz="0.00354699611628992 0.00229863656428458 0.06789200101782"
+        xyz="-0.00229863656428458 -0.06789200101782 0.00354699611628992"
         rpy="0 0 0" />
       <mass
         value="0.045532015555053" />
@@ -903,7 +903,7 @@
           filename="package://gingerurdf/meshes/Left_Wrist_Y_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.964705882352941 0.964705882352941 0.952941176470588 1" />
       </material>
@@ -968,7 +968,7 @@
           filename="package://gingerurdf/meshes/Left_1_1_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -1028,7 +1028,7 @@
           filename="package://gingerurdf/meshes/Left_1_2_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -1086,7 +1086,7 @@
           filename="package://gingerurdf/meshes/Left_2_1_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -1147,7 +1147,7 @@
           filename="package://gingerurdf/meshes/Left_2_2_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -1204,7 +1204,7 @@
           filename="package://gingerurdf/meshes/Left_2_3_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -1261,7 +1261,7 @@
           filename="package://gingerurdf/meshes/Left_3_1_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -1318,7 +1318,7 @@
           filename="package://gingerurdf/meshes/Left_3_2_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -1375,7 +1375,7 @@
           filename="package://gingerurdf/meshes/Left_3_3_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -1432,7 +1432,7 @@
           filename="package://gingerurdf/meshes/Left_4_1_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -1489,7 +1489,7 @@
           filename="package://gingerurdf/meshes/Left_4_2_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -1546,7 +1546,7 @@
           filename="package://gingerurdf/meshes/Left_4_3_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -1603,7 +1603,7 @@
           filename="package://gingerurdf/meshes/Left_5_1_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -1660,7 +1660,7 @@
           filename="package://gingerurdf/meshes/Left_5_2_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -1717,7 +1717,7 @@
           filename="package://gingerurdf/meshes/Left_5_3_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -1794,7 +1794,7 @@
           filename="package://gingerurdf/meshes/Right_Shoulder_X_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
@@ -1842,7 +1842,7 @@
     name="Right_Shoulder_Y_Link">
     <inertial>
       <origin
-        xyz="-0.0012 0.0022 0.0846"
+        xyz="-0.0289229334 0.07946510647 0.000409656965695976"
         rpy="0 0 0" />
       <mass
         value="1.54722182937409" />
@@ -1868,7 +1868,7 @@
           filename="package://gingerurdf/meshes/Right_Shoulder_Y_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.964705882352941 0.964705882352941 0.952941176470588 1" />
       </material>
@@ -1917,7 +1917,7 @@
     name="Right_Elbow_Z_Link">
     <inertial>
       <origin
-        xyz="0 0.0001851 0"
+        xyz="8.57515306709744E-06 2.30396076300599E-07 -3.30433090420801E-05"
         rpy="0 0 0" />
       <mass
         value="0.179037804578459" />
@@ -1938,7 +1938,7 @@
           filename="package://gingerurdf/meshes/Right_Elbow_Z_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.0980392156862745 0.0980392156862745 0.0980392156862745 1" />
       </material>
@@ -1987,7 +1987,7 @@
     name="Right_Elbow_X_Link">
     <inertial>
       <origin
-        xyz="-4.2497316591672E-05 -0.00473747928888482 0.106927273975662"
+        xyz="-0.00473625441145745 0.10692667744856 0.000155369147744361"
         rpy="0 0 0" />
       <mass
         value="0.829601220081052" />
@@ -2012,7 +2012,7 @@
           filename="package://gingerurdf/meshes/Right_Elbow_X_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.964705882352941 0.964705882352941 0.952941176470588 1" />
       </material>
@@ -2082,7 +2082,7 @@
           filename="package://gingerurdf/meshes/Right_Wrist_Z_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
@@ -2132,7 +2132,7 @@
     name="Right_Wrist_X_Link">
     <inertial>
       <origin
-        xyz="5.28376016578624E-07 -1.8543221624312E-06 -0.00954788071247181"
+        xyz="0.00954726828433861 5.12349098885645E-06 4.03806102999837E-08"
         rpy="0 0 0" />
       <mass
         value="0.00848105689759647" />
@@ -2158,7 +2158,7 @@
           filename="package://gingerurdf/meshes/Right_Wrist_X_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.964705882352941 0.964705882352941 0.952941176470588 1" />
       </material>
@@ -2203,7 +2203,7 @@
     name="Right_Wrist_Y_Link">
     <inertial>
       <origin
-        xyz="0.00404946461889125 -0.00213944191775151 0.0690312312256463"
+        xyz="0.00229863656428458 -0.06789200101782 0.00354699611628992"
         rpy="0 0 0" />
       <mass
         value="0.0468003077511801" />
@@ -2224,7 +2224,7 @@
           filename="package://gingerurdf/meshes/Right_Wrist_Y_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.964705882352941 0.964705882352941 0.952941176470588 1" />
       </material>
@@ -2290,7 +2290,7 @@
           filename="package://gingerurdf/meshes/Right_1_1_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -2350,7 +2350,7 @@
           filename="package://gingerurdf/meshes/Right_1_2_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -2411,7 +2411,7 @@
           filename="package://gingerurdf/meshes/Right_2_1_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -2468,7 +2468,7 @@
           filename="package://gingerurdf/meshes/Right_2_2_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -2525,7 +2525,7 @@
           filename="package://gingerurdf/meshes/Right_2_3_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -2582,7 +2582,7 @@
           filename="package://gingerurdf/meshes/Right_3_1_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -2639,7 +2639,7 @@
           filename="package://gingerurdf/meshes/Right_3_2_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -2696,7 +2696,7 @@
           filename="package://gingerurdf/meshes/Right_3_3_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -2753,7 +2753,7 @@
           filename="package://gingerurdf/meshes/Right_4_1_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -2810,7 +2810,7 @@
           filename="package://gingerurdf/meshes/Right_4_2_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -2867,7 +2867,7 @@
           filename="package://gingerurdf/meshes/Right_4_3_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -2924,7 +2924,7 @@
           filename="package://gingerurdf/meshes/Right_5_1_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -2981,7 +2981,7 @@
           filename="package://gingerurdf/meshes/Right_5_2_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
@@ -3038,7 +3038,7 @@
           filename="package://gingerurdf/meshes/Right_5_3_Link.STL" />
       </geometry>
       <material
-        name="">
+        name="w">
         <color
           rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
       </material>
