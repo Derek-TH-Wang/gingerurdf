@@ -212,65 +212,6 @@
   </joint>
 
   <link
-    name="Back_Y_Link_Old">
-    <inertial>
-      <origin
-        xyz="-2.43364144072691E-06 -0.188450472690914 -0.00594321909271028"
-        rpy="0 0 0" />
-      <mass
-        value="14.5524894817025" />
-      <inertia
-        ixx="0"
-        ixy="0"
-        ixz="0"
-        iyy="0"
-        iyz="0"
-        izz="0" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 -1.5707963267949" />
-      <geometry>
-        <mesh
-          filename="package://gingerurdf/meshes/Back_Y_Link.STL" />
-      </geometry>
-      <material
-        name="w">
-        <color
-          rgba="0.964705882352941 0.964705882352941 0.952941176470588 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://gingerurdf/meshes/Back_Y_Link.STL" />
-      </geometry>
-    </collision>
-  </link>
-
-  <joint
-    name="Back_Y_Old"
-    type="revolute">
-    <origin
-      xyz="0.104999999999997 0 0"
-      rpy="-1.5707963267949 0 0" />
-    <parent
-      link="Back_X_Link" />
-    <child
-      link="Back_Y_Link_Old" />
-    <axis
-      xyz="0 0 1" />
-    <limit
-      effort="30" velocity="1.0" lower="-0.720820981073658" upper="0.720820981073658" />
-    <safety_controller
-      soft_lower_limit="-0.261799" soft_upper_limit="0.261799" k_position="0" k_velocity="0" />
-  </joint>
-
-  <link
     name="Back_Y_Link">
     <inertial>
       <origin
@@ -315,10 +256,10 @@
     name="Back_Y"
     type="revolute">
     <origin
-      xyz="0 0 0"
-      rpy="3.141592654 0 -1.5707963267949" />
+      xyz="0.105 0 0"
+      rpy="0 -1.5707963267949 1.5707963267949" />
     <parent
-      link="Back_Y_Link_Old" />
+      link="Back_X_Link" />
     <child
       link="Back_Y_Link" />
     <axis
@@ -1966,9 +1907,9 @@
     <axis
       xyz="0 0 1" />
     <limit
-      effort="30" velocity="1.0" lower="-1.73084301920278" upper="0.0162315620435473" />
+      effort="30" velocity="1.0" lower="-0.0162315620435473" upper="1.73084301920278" />
     <safety_controller
-      soft_lower_limit="-1.730843" soft_upper_limit="0.016231" k_position="0" k_velocity="0" />
+      soft_lower_limit="-0.016231" soft_upper_limit="1.730843" k_position="0" k_velocity="0" />
   </joint>
 
 
