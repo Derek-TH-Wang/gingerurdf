@@ -1,0 +1,34 @@
+<launch>
+  <arg
+    name="model" />
+  <arg
+    name="gui"
+    default="False" />
+  <param
+    name="robot_description"
+    textfile="$(find gingerurdf)/urdf/gingerurdf.urdf" />
+  <param
+    name="use_gui"
+    value="$(arg gui)" />
+  <!--node
+    name="joint_state_publisher"
+    pkg="joint_state_publisher"
+    type="joint_state_publisher" /--> <!--param name="use_gui" value="TRUE" /-->
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="state_publisher"  respawn="true">
+        <remap from="/joint_states" to="/ginger/joint_states"/>
+  </node>
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find gingerurdf)/urdf.rviz" required="true"/>
+  <node pkg="tf" type="static_transform_publisher" name="IK_broadcaster" respawn="true" args="0 0 0 1.570796327 0 0 Back_Y_Link Back_Y_IK_Link 50"/> 
+  <node pkg="tf" type="static_transform_publisher" name="IK_left_ef_broadcaster" respawn="true" args="0 0 0 1.570796327 0 0 Left_Wrist_Y_Link Left_Wrist_Y_IK_Link 50" />
+  <node pkg="tf" type="static_transform_publisher" name="IK_right_ef_broadcaster" respawn="true" args="0 0 0 1.570796327 0 0 Right_Wrist_Y_Link Right_Wrist_Y_IK_Link 50" />
+  <node pkg="tf" type="static_transform_publisher" name="IK_head_broadcaster" respawn="true" args="0 0 0 1.570796327 0 0 Head_Y_Link Head_Y_IK_Link 50" />  
+
+  <node pkg="gingerurdf" type="js_filter" name="GingerActuator_simulator" output="screen"/>
+</launch>
