@@ -30,5 +30,5 @@
   <node pkg="tf" type="static_transform_publisher" name="IK_right_ef_broadcaster" respawn="true" args="0 0 0 1.570796327 0 0 Right_Wrist_Y_Link Right_Wrist_Y_IK_Link 50" />
   <node pkg="tf" type="static_transform_publisher" name="IK_head_broadcaster" respawn="true" args="0 0 0 1.570796327 0 0 Head_Y_Link Head_Y_IK_Link 50" />  
 
-  <node pkg="gingerurdf" type="js_filter" name="GingerActuator_simulator" output="screen"/>
+  <node pkg="gingerurdf" type="ginger_control" name="ginger_simulator" output="screen"/>
 </launch>

@@ -32,7 +32,7 @@ bool setZero(gingerurdf::SetZero::Request &req,gingerurdf::SetZero::Response &re
 }
 
 void Timer(const ros::TimerEvent& event){
-    // ROS_INFO("GO INTO Timer");
+    // ROS_DEBUG("GO INTO Timer");
     sensor_msgs::JointState js;
     gingerurdf::ArmMsgs lArmAngle, rArmAngle;
     gingerurdf::BodyMsgs bodyAngle;
@@ -71,10 +71,10 @@ void Timer(const ros::TimerEvent& event){
 }
 
 void jsCallback(const sensor_msgs::JointState &msg){
-    ROS_INFO("cb");
+    ROS_DEBUG("cb");
 
     for(int i = 0; i < msg.name.size();i++){
-        ROS_INFO("%d,  %f  %s",i, msg.position[i], msg.name[i].c_str());
+        ROS_DEBUG("%d,  %f  %s",i, msg.position[i], msg.name[i].c_str());
 
         if(!strcmp("Knee",msg.name[i].c_str())){
             js_.position[0] = msg.position[i];
@@ -244,7 +244,7 @@ void SubRightArmPos(const gingerurdf::ArmMsgs &msg) {
 }
 
 void SubLeftArmPos(const gingerurdf::ArmMsgs &msg) {
-    ROS_INFO("sub left arm target position");
+    ROS_DEBUG("sub left arm target position");
     js_.position[7] = msg.Shoulder_X;
     js_.position[8] = msg.Shoulder_Y;
     js_.position[9] = msg.Elbow_Z;
@@ -268,7 +268,8 @@ void SubTrunkPos(const gingerurdf::BodyMsgs &msg) {
 // }
 
 int main(int argc, char** argv){
-    ros::init(argc, argv, "js_filter"); //loglevel
+    ros::init(argc, argv, "ginger_control");
+    ros::console::set_logger_level(ROSCONSOLE_DEFAULT_NAME, ros::console::levels::Info);
     ros::NodeHandle nh_;
     sub_ = nh_.subscribe("/joint_states", 1, jsCallback);
     pub_ = nh_.advertise<sensor_msgs::JointState>("/joint_state_in", 10);
@@ -300,8 +301,8 @@ int main(int argc, char** argv){
         js_.position[i] = 0;
     }
 
-    ROS_INFO("go out cycle");
-    timer_ = nh_.createTimer(ros::Duration(0.005), Timer);
+    ROS_DEBUG("go out cycle");
+    timer_ = nh_.createTimer(ros::Duration(0.002), Timer);
 
     ros::spin();
     return  0;

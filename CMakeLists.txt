@@ -44,12 +44,12 @@ include_directories(
   include ${catkin_INCLUDE_DIRS}
 )
 
-add_executable(js_filter
+add_executable(ginger_control
   include/gingerurdf/joint_state.h
-  src/js_filter.cpp
+  src/ginger_control.cpp
 )
-add_dependencies(js_filter ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(js_filter
+add_dependencies(ginger_control ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(ginger_control
   ${catkin_LIBRARIES}
 )
 
@@ -64,6 +64,6 @@ install(DIRECTORY meshes DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 install(DIRECTORY srv DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 install(DIRECTORY urdf DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 
-install(TARGETS js_filter
+install(TARGETS ginger_control
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
