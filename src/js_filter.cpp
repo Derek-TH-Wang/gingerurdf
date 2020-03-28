@@ -1,46 +1,82 @@
 #include <ros/ros.h>
 #include "sensor_msgs/JointState.h"
+#include "gingerurdf/ArmMsgs.h"
+#include "gingerurdf/BodyMsgs.h"
+#include "gingerurdf/HandMsgs.h"
+#include "gingerurdf/HeadMsgs.h"
 #include "gingerurdf/joint_state.h"
 #include <gingerurdf/SetZero.h>
 
 sensor_msgs::JointState js_;
-//sensor_msgs::JointState js2_;
 ros::Publisher  pub_;
 ros::Publisher  pub2_;
 ros::Subscriber sub_;
 ros::ServiceServer ser_;
 ros::Timer  timer_;
 
+ros::Publisher mainbodyAnglePub;
+ros::Publisher rightArmAnglePub;
+ros::Publisher leftArmAnglePub;
+ros::Subscriber rightArmPosSub;
+ros::Subscriber leftArmPosSub;
+ros::Subscriber trunkPosSub;
+
 bool setZero(gingerurdf::SetZero::Request &req,gingerurdf::SetZero::Response &res){
-                        //sensor_msgs::JointState js;
-                        for(int i = 0 ; i < 49;i++){
-                           // js.name.push_back(actor[i]);
-                            js_.position[i] = 0.0;
-                        }
-                        js_.header.stamp = ros::Time::now();
-                        pub2_.publish(js_);
-                        res.ret = 1;
-                        return true;
-                    }
-void jspub(const ros::TimerEvent& event){
-        //ROS_INFO("timer");
-        sensor_msgs::JointState js;
-        js = js_;
-        // std::cout << "test js_.name size " << js.name.size() << "test js_.name size " << js.position.size() <<  std::endl;
-        js.header.stamp = ros::Time::now();
-        pub2_.publish(js);
-        js.name.clear();
-        js.position.clear();
-        js.velocity.clear();
-        js.effort.clear();
+    for(int i = 0 ; i < 49;i++){
+        js_.position[i] = 0.0;
     }
+    js_.header.stamp = ros::Time::now();
+    pub2_.publish(js_);
+    res.ret = 1;
+    return true;
+}
+
+void Timer(const ros::TimerEvent& event){
+    // ROS_INFO("GO INTO Timer");
+    sensor_msgs::JointState js;
+    gingerurdf::ArmMsgs lArmAngle, rArmAngle;
+    gingerurdf::BodyMsgs bodyAngle;
+    gingerurdf::HeadMsgs headAngle;
+
+    bodyAngle.Knee = js_.position[0];
+    bodyAngle.Back_Z = js_.position[1];
+    bodyAngle.Back_X = js_.position[2];
+    bodyAngle.Back_Y = js_.position[3];
+    lArmAngle.Shoulder_X = js_.position[7];
+    lArmAngle.Shoulder_Y = js_.position[8];
+    lArmAngle.Elbow_Z = js_.position[9];
+    lArmAngle.Elbow_X = js_.position[10];
+    lArmAngle.Wrist_Z = js_.position[11];
+    lArmAngle.Wrist_X = js_.position[12];
+    lArmAngle.Wrist_Y = js_.position[13];
+    rArmAngle.Shoulder_X = js_.position[14];
+    rArmAngle.Shoulder_Y = js_.position[15];
+    rArmAngle.Elbow_Z = js_.position[16];
+    rArmAngle.Elbow_X = js_.position[17];
+    rArmAngle.Wrist_Z = js_.position[18];
+    rArmAngle.Wrist_X = js_.position[19];
+    rArmAngle.Wrist_Y = js_.position[20];
+
+    mainbodyAnglePub.publish(bodyAngle);
+    rightArmAnglePub.publish(rArmAngle);
+    leftArmAnglePub.publish(lArmAngle);
+
+    js = js_;
+    js.header.stamp = ros::Time::now();
+    pub2_.publish(js);
+    js.name.clear();
+    js.position.clear();
+    js.velocity.clear();
+    js.effort.clear();
+}
+
 void jsCallback(const sensor_msgs::JointState &msg){
-        ROS_INFO("cb");
+    ROS_INFO("cb");
 
-        for(int i = 0; i < msg.name.size();i++){
-            ROS_INFO("%d,  %f  %s",i, msg.position[i], msg.name[i].c_str());
+    for(int i = 0; i < msg.name.size();i++){
+        ROS_INFO("%d,  %f  %s",i, msg.position[i], msg.name[i].c_str());
 
-        if(!strcmp("Knee_X",msg.name[i].c_str())){
+        if(!strcmp("Knee",msg.name[i].c_str())){
             js_.position[0] = msg.position[i];
         }
         if(!strcmp("Back_Z",msg.name[i].c_str())){
@@ -61,7 +97,6 @@ void jsCallback(const sensor_msgs::JointState &msg){
         if(!strcmp("Head_Y",msg.name[i].c_str())){
             js_.position[6] = msg.position[i];
         }
-
 
         if(!strcmp("Left_Shoulder_X",msg.name[i].c_str())){
             js_.position[7] = msg.position[i];
@@ -85,8 +120,6 @@ void jsCallback(const sensor_msgs::JointState &msg){
             js_.position[13] = msg.position[i];
         }
 
-
-
         if(!strcmp("Right_Shoulder_X",msg.name[i].c_str())){
             js_.position[14] = msg.position[i];
         }
@@ -109,14 +142,12 @@ void jsCallback(const sensor_msgs::JointState &msg){
             js_.position[20] = msg.position[i];
         }
 
-
         if(!strcmp("Left_1_1",msg.name[i].c_str())){
             js_.position[21] = msg.position[i];
         }
         if(!strcmp("Left_1_2",msg.name[i].c_str())){
             js_.position[22] = msg.position[i];
         }
-
         if(!strcmp("Left_2_1",msg.name[i].c_str())){
             js_.position[23] = msg.position[i];
         }
@@ -144,7 +175,6 @@ void jsCallback(const sensor_msgs::JointState &msg){
         if(!strcmp("Left_4_3",msg.name[i].c_str())){
             js_.position[31] = msg.position[i];
         }
-
         if(!strcmp("Left_5_1",msg.name[i].c_str())){
             js_.position[32] = msg.position[i];
         }
@@ -162,7 +192,6 @@ void jsCallback(const sensor_msgs::JointState &msg){
         if(!strcmp("Right_1_2",msg.name[i].c_str())){
             js_.position[36] = msg.position[i];
         }
-
         if(!strcmp("Right_2_1",msg.name[i].c_str())){
             js_.position[37] = msg.position[i];
         }
@@ -190,7 +219,6 @@ void jsCallback(const sensor_msgs::JointState &msg){
         if(!strcmp("Right_4_3",msg.name[i].c_str())){
             js_.position[45] = msg.position[i];
         }
-
         if(!strcmp("Right_5_1",msg.name[i].c_str())){
             js_.position[46] = msg.position[i];
         }
@@ -200,44 +228,83 @@ void jsCallback(const sensor_msgs::JointState &msg){
         if(!strcmp("Right_5_3",msg.name[i].c_str())){
             js_.position[48] = msg.position[i];
         }
-
-        }
-         js_.header.stamp = ros::Time::now();
-         pub_.publish(js_);
     }
+    js_.header.stamp = ros::Time::now();
+    pub_.publish(js_);
+}
 
+void SubRightArmPos(const gingerurdf::ArmMsgs &msg) {
+    js_.position[14] = msg.Shoulder_X;
+    js_.position[15] = msg.Shoulder_Y;
+    js_.position[16] = msg.Elbow_Z;
+    js_.position[17] = msg.Elbow_X;
+    js_.position[18] = msg.Wrist_Z;
+    js_.position[19] = msg.Wrist_X;
+    js_.position[20] = msg.Wrist_Y;
+}
+
+void SubLeftArmPos(const gingerurdf::ArmMsgs &msg) {
+    ROS_INFO("sub left arm target position");
+    js_.position[7] = msg.Shoulder_X;
+    js_.position[8] = msg.Shoulder_Y;
+    js_.position[9] = msg.Elbow_Z;
+    js_.position[10] = msg.Elbow_X;
+    js_.position[11] = msg.Wrist_Z;
+    js_.position[12] = msg.Wrist_X;
+    js_.position[13] = msg.Wrist_Y;
+}
+
+void SubTrunkPos(const gingerurdf::BodyMsgs &msg) {
+    js_.position[0] = msg.Knee;
+    js_.position[1] = msg.Back_Z;
+    js_.position[2] = msg.Back_X;
+    js_.position[3] = msg.Back_Y;
+}
+
+// void SubHeadPos(const gingerurdf::HeadMsgs &msg) {
+//     js_.position[4] = msg.Neck_Z;
+//     js_.position[5] = msg.Neck_X;
+//     js_.position[6] = msg.Head;
+// }
 
 int main(int argc, char** argv){
-    ros::init(argc, argv, "js_filter");
+    ros::init(argc, argv, "js_filter"); //loglevel
     ros::NodeHandle nh_;
-    sub_ = nh_.subscribe("/joint_states",1,jsCallback);
-    pub_ = nh_.advertise<sensor_msgs::JointState>("/joint_state_in",10);
-    pub2_ = nh_.advertise<sensor_msgs::JointState>("/ginger/joint_states",1);
+    sub_ = nh_.subscribe("/joint_states", 1, jsCallback);
+    pub_ = nh_.advertise<sensor_msgs::JointState>("/joint_state_in", 10);
+    pub2_ = nh_.advertise<sensor_msgs::JointState>("/ginger/joint_states", 1);
     ser_ = nh_.advertiseService("/setZeroPostion",setZero);
 
-        js_.name.resize(49);
-        js_.position.resize(49);
+    mainbodyAnglePub =
+      nh_.advertise<gingerurdf::BodyMsgs>("/MainBody/Position", 1);
+    rightArmAnglePub =
+      nh_.advertise<gingerurdf::ArmMsgs>("/RightArm/Position", 1);
+    leftArmAnglePub =
+      nh_.advertise<gingerurdf::ArmMsgs>("/LeftArm/Position", 1);
 
-        for(int i = 0; i < 49; i++){
-            // std::cout << actor[i]  << std::endl;
-            // js_.name.push_back(actor[i]);
-            // js_.position.push_back(0);
+    rightArmPosSub =
+      nh_.subscribe("/RightArm/TargetPosition", 1, SubRightArmPos);
+    leftArmPosSub =
+      nh_.subscribe("/LeftArm/TargetPosition", 1, SubLeftArmPos);
+    trunkPosSub =
+      nh_.subscribe("/MainBody/TargetPosition", 1, SubTrunkPos);
+    // headPosSub =
+    //   nh_.subscribe("/HeadBody/TargetPosition", 1, SubHeadPos);
 
-            js_.name[i] = actor[i];
-            js_.position[i] = 0;
+    js_.name.resize(49);
+    js_.position.resize(49);
 
-            // std::cout << "___  " << js_.name[i] << std::endl;
-            // std::cout << "___  " << js_.position[i] << std::endl;
-        }
-        //js_.header.stamp = ros::Time::now();
+    for(int i = 0; i < 49; i++){
 
-        //pub_.publish(js_);
+        js_.name[i] = actor[i];
+        js_.position[i] = 0;
+    }
 
-        ROS_INFO("go out cycle");
-        timer_ = nh_.createTimer(ros::Duration(0.03),jspub);
+    ROS_INFO("go out cycle");
+    timer_ = nh_.createTimer(ros::Duration(0.005), Timer);
 
-        ros::spin();
-        return  0;
+    ros::spin();
+    return  0;
 
 }
 

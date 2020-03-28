@@ -2,7 +2,16 @@ cmake_minimum_required(VERSION 2.8.3)
 
 project(gingerurdf)
 
-find_package(catkin REQUIRED roscpp rospy std_msgs  message_generation)
+find_package(catkin REQUIRED roscpp rospy std_msgs  geometry_msgs message_generation)
+
+add_message_files(
+   FILES
+   HandMsgs.msg
+   HeadMsgs.msg
+   ArmMsgs.msg
+   BodyMsgs.msg
+   WheelMsg.msg
+)
 
 add_service_files(FILES
   SetZero.srv
@@ -11,11 +20,12 @@ add_service_files(FILES
 generate_messages(DEPENDENCIES
   roscpp
   std_msgs
+  geometry_msgs
 )
 
 catkin_package(
     #INCLUDE_DIRS include
-    CATKIN_DEPENDS roscpp rospy std_msgs message_runtime)
+    CATKIN_DEPENDS roscpp rospy std_msgs geometry_msgs message_runtime)
 
 find_package(roslaunch)
 
