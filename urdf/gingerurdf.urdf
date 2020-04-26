@@ -1805,7 +1805,7 @@
     <limit
       effort="30" velocity="1.0" lower="-1.5707963267949" upper="1.5707963267949" />
     <safety_controller
-      soft_lower_limit="-0.785398" soft_upper_limit="1.570796" k_position="0" k_velocity="0" />
+      soft_lower_limit="-1.570796" soft_upper_limit="1.570796" k_position="0" k_velocity="0" />
   </joint>
   <link
     name="Right_Elbow_X_Link">
