@@ -1,0 +1,152 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"Knee_Link" [label="Knee_Link"];
+"Back_Z_Link" [label="Back_Z_Link"];
+"Back_X_Link" [label="Back_X_Link"];
+"Back_Y_Link" [label="Back_Y_Link"];
+"Left_Shoulder_X_Link" [label="Left_Shoulder_X_Link"];
+"Left_Shoulder_Y_Link" [label="Left_Shoulder_Y_Link"];
+"Left_Elbow_Z_Link" [label="Left_Elbow_Z_Link"];
+"Left_Elbow_X_Link" [label="Left_Elbow_X_Link"];
+"Left_Wrist_Z_Link" [label="Left_Wrist_Z_Link"];
+"Left_Wrist_X_Link" [label="Left_Wrist_X_Link"];
+"Left_Wrist_Y_Link" [label="Left_Wrist_Y_Link"];
+"Left_1_1_Link" [label="Left_1_1_Link"];
+"Left_1_2_Link" [label="Left_1_2_Link"];
+"Left_2_1_Link" [label="Left_2_1_Link"];
+"Left_2_2_Link" [label="Left_2_2_Link"];
+"Left_2_3_Link" [label="Left_2_3_Link"];
+"Left_3_1_Link" [label="Left_3_1_Link"];
+"Left_3_2_Link" [label="Left_3_2_Link"];
+"Left_3_3_Link" [label="Left_3_3_Link"];
+"Left_4_1_Link" [label="Left_4_1_Link"];
+"Left_4_2_Link" [label="Left_4_2_Link"];
+"Left_4_3_Link" [label="Left_4_3_Link"];
+"Left_5_1_Link" [label="Left_5_1_Link"];
+"Left_5_2_Link" [label="Left_5_2_Link"];
+"Left_5_3_Link" [label="Left_5_3_Link"];
+"Neck_Z_Link" [label="Neck_Z_Link"];
+"Neck_X_Link" [label="Neck_X_Link"];
+"Head_Y_Link" [label="Head_Y_Link"];
+"Right_Shoulder_X_Link" [label="Right_Shoulder_X_Link"];
+"Right_Shoulder_Y_Link" [label="Right_Shoulder_Y_Link"];
+"Right_Elbow_Z_Link" [label="Right_Elbow_Z_Link"];
+"Right_Elbow_X_Link" [label="Right_Elbow_X_Link"];
+"Right_Wrist_Z_Link" [label="Right_Wrist_Z_Link"];
+"Right_Wrist_X_Link" [label="Right_Wrist_X_Link"];
+"Right_Wrist_Y_Link" [label="Right_Wrist_Y_Link"];
+"Right_1_1_Link" [label="Right_1_1_Link"];
+"Right_1_2_Link" [label="Right_1_2_Link"];
+"Right_2_1_Link" [label="Right_2_1_Link"];
+"Right_2_2_Link" [label="Right_2_2_Link"];
+"Right_2_3_Link" [label="Right_2_3_Link"];
+"Right_3_1_Link" [label="Right_3_1_Link"];
+"Right_3_2_Link" [label="Right_3_2_Link"];
+"Right_3_3_Link" [label="Right_3_3_Link"];
+"Right_4_1_Link" [label="Right_4_1_Link"];
+"Right_4_2_Link" [label="Right_4_2_Link"];
+"Right_4_3_Link" [label="Right_4_3_Link"];
+"Right_5_1_Link" [label="Right_5_1_Link"];
+"Right_5_2_Link" [label="Right_5_2_Link"];
+"Right_5_3_Link" [label="Right_5_3_Link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "Knee" [label="xyz: 0 -0.163754 0.422733 \nrpy: 1.5708 -5.55112e-17 1.5708"]
+"Knee" -> "Knee_Link"
+"Knee_Link" -> "Back_Z" [label="xyz: 0.0258402 0.459274 0.015 \nrpy: -1.5708 0 0"]
+"Back_Z" -> "Back_Z_Link"
+"Back_Z_Link" -> "Back_X" [label="xyz: 0 0 0 \nrpy: 0 -1.5708 1.5708"]
+"Back_X" -> "Back_X_Link"
+"Back_X_Link" -> "Back_Y" [label="xyz: 0.105 0 0 \nrpy: 0 -1.5708 1.5708"]
+"Back_Y" -> "Back_Y_Link"
+"Back_Y_Link" -> "Left_Shoulder_X" [label="xyz: 0.167643 -0.257434 0.0153205 \nrpy: 1.5708 -0 -1.91984"]
+"Left_Shoulder_X" -> "Left_Shoulder_X_Link"
+"Left_Shoulder_X_Link" -> "Left_Shoulder_Y" [label="xyz: 0 0 0 \nrpy: 1.5708 1.22175 3.14159"]
+"Left_Shoulder_Y" -> "Left_Shoulder_Y_Link"
+"Left_Shoulder_Y_Link" -> "Left_Elbow_Z" [label="xyz: 0.0491248 0.224656 0 \nrpy: 0 1.5708 1.5708"]
+"Left_Elbow_Z" -> "Left_Elbow_Z_Link"
+"Left_Elbow_Z_Link" -> "Left_Elbow_X" [label="xyz: 0 0 0 \nrpy: 1.5708 -0 0"]
+"Left_Elbow_X" -> "Left_Elbow_X_Link"
+"Left_Elbow_X_Link" -> "Left_Wrist_Z" [label="xyz: 0 0.209558 0 \nrpy: -1.5708 0 0"]
+"Left_Wrist_Z" -> "Left_Wrist_Z_Link"
+"Left_Wrist_Z_Link" -> "Left_Wrist_X" [label="xyz: 0 0 0 \nrpy: 0 -1.5708 1.5708"]
+"Left_Wrist_X" -> "Left_Wrist_X_Link"
+"Left_Wrist_X_Link" -> "Left_Wrist_Y" [label="xyz: 0 0 0 \nrpy: 0 -1.5708 1.5708"]
+"Left_Wrist_Y" -> "Left_Wrist_Y_Link"
+"Left_Wrist_Y_Link" -> "Left_1_1" [label="xyz: -0.0421966 -0.0941607 0.0317642 \nrpy: -3.0436 0.709745 0.0639721"]
+"Left_1_1" -> "Left_1_1_Link"
+"Left_1_1_Link" -> "Left_1_2" [label="xyz: -0.0150013 0.0212359 -0.000373 \nrpy: 2.28845e-14 1.23013e-13 -3.09301"]
+"Left_1_2" -> "Left_1_2_Link"
+"Left_Wrist_Y_Link" -> "Left_2_1" [label="xyz: 0.00326509 -0.116386 0.0255031 \nrpy: 0 -0 0"]
+"Left_2_1" -> "Left_2_1_Link"
+"Left_2_1_Link" -> "Left_2_2" [label="xyz: 0 -0.026 0 \nrpy: 0 -0 0"]
+"Left_2_2" -> "Left_2_2_Link"
+"Left_2_2_Link" -> "Left_2_3" [label="xyz: 0 -0.025 -4.37595e-05 \nrpy: 0 -0 0"]
+"Left_2_3" -> "Left_2_3_Link"
+"Left_Wrist_Y_Link" -> "Left_3_1" [label="xyz: 0.00526509 -0.121386 0.00750314 \nrpy: 0 -0 0"]
+"Left_3_1" -> "Left_3_1_Link"
+"Left_3_1_Link" -> "Left_3_2" [label="xyz: 0 -0.026 0 \nrpy: 0 -0 0"]
+"Left_3_2" -> "Left_3_2_Link"
+"Left_3_2_Link" -> "Left_3_3" [label="xyz: 0 -0.025 -4.37595e-05 \nrpy: 0 -0 0"]
+"Left_3_3" -> "Left_3_3_Link"
+"Left_Wrist_Y_Link" -> "Left_4_1" [label="xyz: 0.00326509 -0.113386 -0.0105646 \nrpy: 0 -0 0"]
+"Left_4_1" -> "Left_4_1_Link"
+"Left_4_1_Link" -> "Left_4_2" [label="xyz: 0 -0.026 5.92746e-05 \nrpy: 0 -0 0"]
+"Left_4_2" -> "Left_4_2_Link"
+"Left_4_2_Link" -> "Left_4_3" [label="xyz: 0 -0.025 -4.37595e-05 \nrpy: 0 -0 0"]
+"Left_4_3" -> "Left_4_3_Link"
+"Left_Wrist_Y_Link" -> "Left_5_1" [label="xyz: 0.00266509 -0.108683 -0.027597 \nrpy: 0 -0 0"]
+"Left_5_1" -> "Left_5_1_Link"
+"Left_5_1_Link" -> "Left_5_2" [label="xyz: 0 -0.0234517 0 \nrpy: 0 -0 0"]
+"Left_5_2" -> "Left_5_2_Link"
+"Left_5_2_Link" -> "Left_5_3" [label="xyz: 0 -0.0224982 0.000106814 \nrpy: 0 -0 0"]
+"Left_5_3" -> "Left_5_3_Link"
+"Back_Y_Link" -> "Neck_Z" [label="xyz: 0 -0.378207 0 \nrpy: 0 1.5708 -1.5708"]
+"Neck_Z" -> "Neck_Z_Link"
+"Neck_Z_Link" -> "Neck_X" [label="xyz: 0 0 0 \nrpy: 0 -1.5708 -1.5708"]
+"Neck_X" -> "Neck_X_Link"
+"Neck_X_Link" -> "Head_Y" [label="xyz: 0.0609748 0 0 \nrpy: 0 1.5708 -1.5708"]
+"Head_Y" -> "Head_Y_Link"
+"Back_Y_Link" -> "Right_Shoulder_X" [label="xyz: -0.167643 -0.257434 0.0153205 \nrpy: -1.5708 1.11022e-16 -1.22171"]
+"Right_Shoulder_X" -> "Right_Shoulder_X_Link"
+"Right_Shoulder_X_Link" -> "Right_Shoulder_Y" [label="xyz: 0 0 0 \nrpy: 1.5708 -1.22171 3.24588e-16"]
+"Right_Shoulder_Y" -> "Right_Shoulder_Y_Link"
+"Right_Shoulder_Y_Link" -> "Right_Elbow_Z" [label="xyz: -0.0491248 0.224656 0 \nrpy: 0 1.5708 1.5708"]
+"Right_Elbow_Z" -> "Right_Elbow_Z_Link"
+"Right_Elbow_Z_Link" -> "Right_Elbow_X" [label="xyz: 0 0 0 \nrpy: 1.5708 -0 0"]
+"Right_Elbow_X" -> "Right_Elbow_X_Link"
+"Right_Elbow_X_Link" -> "Right_Wrist_Z" [label="xyz: 0 0.20956 0 \nrpy: -1.5708 0 0"]
+"Right_Wrist_Z" -> "Right_Wrist_Z_Link"
+"Right_Wrist_Z_Link" -> "Right_Wrist_X" [label="xyz: 0 0 0 \nrpy: 0 -1.5708 1.5708"]
+"Right_Wrist_X" -> "Right_Wrist_X_Link"
+"Right_Wrist_X_Link" -> "Right_Wrist_Y" [label="xyz: 0 0 0 \nrpy: 0 -1.5708 1.5708"]
+"Right_Wrist_Y" -> "Right_Wrist_Y_Link"
+"Right_Wrist_Y_Link" -> "Right_1_1" [label="xyz: 0.0421966 -0.0941607 0.0317642 \nrpy: 0 -0 0"]
+"Right_1_1" -> "Right_1_1_Link"
+"Right_1_1_Link" -> "Right_1_2" [label="xyz: 0.0111119 -0.0219257 0.0084811 \nrpy: 0 -0 0"]
+"Right_1_2" -> "Right_1_2_Link"
+"Right_Wrist_Y_Link" -> "Right_2_1" [label="xyz: -0.00326509 -0.116386 0.0255031 \nrpy: 0 -0 0"]
+"Right_2_1" -> "Right_2_1_Link"
+"Right_2_1_Link" -> "Right_2_2" [label="xyz: 0 -0.026 0 \nrpy: 0 -0 0"]
+"Right_2_2" -> "Right_2_2_Link"
+"Right_2_2_Link" -> "Right_2_3" [label="xyz: 0 -0.025 -4.37595e-05 \nrpy: 0 -0 0"]
+"Right_2_3" -> "Right_2_3_Link"
+"Right_Wrist_Y_Link" -> "Right_3_1" [label="xyz: -0.00526509 -0.121386 0.00750314 \nrpy: 0 -0 0"]
+"Right_3_1" -> "Right_3_1_Link"
+"Right_3_1_Link" -> "Right_3_2" [label="xyz: 0 -0.026 0 \nrpy: 0 -0 0"]
+"Right_3_2" -> "Right_3_2_Link"
+"Right_3_2_Link" -> "Right_3_3" [label="xyz: 0 -0.025 -4.37595e-05 \nrpy: 0 -0 0"]
+"Right_3_3" -> "Right_3_3_Link"
+"Right_Wrist_Y_Link" -> "Right_4_1" [label="xyz: -0.00326509 -0.113386 -0.0104969 \nrpy: 0 -0 0"]
+"Right_4_1" -> "Right_4_1_Link"
+"Right_4_1_Link" -> "Right_4_2" [label="xyz: 0 -0.026 0 \nrpy: 0 -0 0"]
+"Right_4_2" -> "Right_4_2_Link"
+"Right_4_2_Link" -> "Right_4_3" [label="xyz: 0 -0.025 -4.37595e-05 \nrpy: 0 -0 0"]
+"Right_4_3" -> "Right_4_3_Link"
+"Right_Wrist_Y_Link" -> "Right_5_1" [label="xyz: -0.00266509 -0.108685 -0.0275968 \nrpy: 0 -0 0"]
+"Right_5_1" -> "Right_5_1_Link"
+"Right_5_1_Link" -> "Right_5_2" [label="xyz: 0 -0.02345 0 \nrpy: 0 -0 0"]
+"Right_5_2" -> "Right_5_2_Link"
+"Right_5_2_Link" -> "Right_5_3" [label="xyz: 0 -0.0225 0.000106658 \nrpy: 0 -0 0"]
+"Right_5_3" -> "Right_5_3_Link"
+}
